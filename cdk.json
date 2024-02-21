@@ -1,0 +1,58 @@
+{
+  "app": "python app.py",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      "source.bat",
+      "**/__init__.py",
+      "python/__pycache__",
+      "tests"
+    ]
+  },
+  "context": {
+    "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
+    "@aws-cdk/core:stackRelativeExports": true,
+    "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
+    "@aws-cdk/aws-lambda:recognizeVersionProps": true,
+    "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": true,
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:target-partitions": [
+      "aws",
+      "aws-cn"
+    ],
+    "config": {
+      "accounts": {
+        "tooling": {
+          "account": "24xx",
+          "region": "sa-east-1"
+        },
+        "dev": {
+          "account": "24xx",
+          "region": "sa-east-1"
+        },
+        "qa": {
+          "account": "24xx",
+          "region": "sa-east-1"
+        },
+        "prod": {
+          "account": "24xx",
+          "region": "sa-east-1"
+        }
+      },
+      "internet_vpc": "vpc-xx",
+      "development_branch": "main",
+      "production_branch": "main",
+      "owner": "wolfgangunger",
+      "repo": "cdk-codepipeline",
+      "connection_arn": "arn:aws:codestar-connections:sa-east-1:xxx:connection/2a55ddxxx"
+    }
+  }
+}
